@@ -1,0 +1,107 @@
+
+
+  <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Your Account</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+ 
+
+    .container {
+      
+      padding: 15%;
+    
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #343a40;
+    }
+
+    .code-container {
+      display: flex;
+      justify-content:center;
+      margin-bottom: 20px;
+    }
+
+    .code {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      font-size: 1.2em;
+      border-radius: 5px;
+      margin: 5%;
+      border: 1px solid #ced4da;
+    }
+
+    .info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-link {
+      color: #007bff;
+      border: none;
+      text-decoration: underline;
+    }
+
+    .btn-link:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+   <div class="text-center">
+    <h2>Verify Your Account</h2>
+    <p>We've sent a six-digit code to your email address. Enter the code below to confirm your email address.</p>
+   </div>
+    <div class="code-container">
+      <div class="code-container">
+        <input #codeInputs  type="text" class="code" placeholder="*" [(ngModel)]="code1"maxlength="1" required (input)="onCodeInput(0)">
+        <input #codeInputs  type="text" class="code" placeholder="*" maxlength="1" required [(ngModel)]="code2" (input)="onCodeInput(1)">
+        <input #codeInputs  type="text" class="code" placeholder="*" maxlength="1" required [(ngModel)]="code3" (input)="onCodeInput(2)">
+        <input #codeInputs  type="text" class="code" placeholder="*" maxlength="1" required [(ngModel)]="code4" (input)="onCodeInput(3)">
+        <input #codeInputs  type="text" class="code" placeholder="*" maxlength="1" required [(ngModel)]="code5" (input)="onCodeInput(4)">
+        <input #codeInputs  type="text" class="code" placeholder="*" maxlength="1" required [(ngModel)]="code6" (input)="onCodeInput(5)">
+      </div>
+    </div>
+    <small class="info row" style=" margin-right:5px; flex-direction: row; justify-content: space-between; ">
+      <a class="btn btn-link col col-sm-6" (click)="verifyOTP()">Verify Codes and Continue</a>
+      <a class="btn btn-warning col col-sm-6" (click)="OTPRESEND()">Resend the Code</a>
+    </small>
+ 
+        <p  class="text-center" style="margin: 10%; text-decoration: solid; color: #0056b3">{{ enteredCode }}</p>
+        <h1 [ngStyle]="isVerified ? {'color': 'green'} : {'color': 'red'}">{{OTPmsg}}</h1>
+
+    
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

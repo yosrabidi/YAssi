@@ -1,0 +1,128 @@
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+     
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <app-sidebar></app-sidebar>
+
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+         
+            <div class="col-lg-6 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title"> Users</h4>
+                  
+                 
+
+                  <p class="card-description">
+                    
+                    Users <code>Liste Users :</code>
+                    
+                  </p>
+                
+                  
+                 
+                  <div class="container my-4">
+                    <div class="row">
+                      <input class="form-control" name="searchTerm" placeholder="search"   [(ngModel)]="searchTerm" (ngModelChange)="filterUsers()">
+                            <button type="button" class="btn btn-success btn-primary btn-icon my-2" (click)="downloadPdf()">Download PDF</button>
+                    </div>
+                  </div>
+                  
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>Nom</th>
+                          <th>Prenom</th>
+                          <th>UserName</th>
+                          <th>Email</th>
+                          <th>addresse</th>
+                          <th>Telephone</th>
+                          <th>Role</th>
+                          <th>Status</th>
+                          <th style="text-align: center;">Actions</th>
+                          <th>Block</th>
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let i of users" >
+                          <td>{{i.name}}</td>
+                            <td>{{i.prenom}}</td>
+                            <td>{{i.username}}</td>
+                            <td>{{i.email}}</td>
+                            <td>{{i.address}}</td>
+                            <td>{{i.tel}}</td>
+                            <td>
+                                <ul>
+                                  <li *ngFor="let role of i.roles">
+                                    {{ role.name }}
+                                  </li>
+                                </ul>
+                              </td>
+                            <td><label *ngIf="i.stateuser" class="badge badge-info">Completed</label>
+                            <label *ngIf="i.stateuser==false" class="badge badge-warning">In progress</label>
+                            </td>
+                            <td>
+                                <div >
+                                  <!-- Add ngIf condition based on role.name -->
+                                
+                                  <div class="col col-md-3">
+                                    <button type="button" class="btn btn-danger btn-rounded btn-icon" (click)="Remove(i.id)">
+                                      <i class="mdi mdi-account-remove"></i>
+                                    </button>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div *ngIf="isRoleAdmin(i.roles)" >
+                                
+                                  <button
+                                  type="button"
+                                  class="btn btn-warning btn-rounded btn-icon"
+                                  (click)="toggleBlock(i.id, i.blocked)"
+                                >
+                                  <i class="mdi mdi-account-circle"></i>
+                                  {{ i.blocked ? 'Unblock' : 'Block' }}
+                                </button>
+                                 
+                                </div>
+                              </td>
+                             
+                        </tr>
+            
+                      </tbody>
+                    </table>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Premium <a href="../../../../../www.bootstrapdash.com/index.html" target="_blank">Bootstrap admin template</a> from BootstrapDash.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2021. All rights reserved.</span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+
+</body>

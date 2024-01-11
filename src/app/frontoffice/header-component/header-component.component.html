@@ -1,0 +1,69 @@
+<header id="header-con" class="w-100 float-left">
+    <div class="wrapper">
+       <nav class="navbar navbar-expand-lg navbar-light pl-0 pr-0 pb-0">
+          <a class="navbar-brand p-0" href="index.html">
+             <figure class="mb-0">
+                <img src="assets/image/navbar-icon.png" alt="navbar-icon">
+             </figure>
+          </a>
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav">
+                <li class="nav-item active pl-0">
+                   <a class="nav-link p-0 is-active" routerLink="/front/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link p-0" href="about-us.html">About us</a>
+                </li>
+                <li class="nav-item">
+                   <a class="nav-link p-0" routerLink="/front/Portefeuille" >Portefeuille</a>
+                </li>
+                 <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Services
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="services.html">Services</a>
+                     <a class="dropdown-item" href="business-growth.html">Business Growth</a>
+                     <a class="dropdown-item" href="marketing-advices.html">Marketing Advices</a>
+                     <a class="dropdown-item" href="finance-consulting.html">Finance Consulting</a>
+                     <a class="dropdown-item" href="wealth-management.html">Wealth Management</a>
+                     <a class="dropdown-item" href="taxes-efficiency.html">Taxes Efficiency</a>
+                     <a class="dropdown-item" href="life-insurance.html">Life Insurance</a>
+                   </div>
+                 </li>
+                <li class="nav-item dropdown">
+                   <a class="nav-link dropdown-toggle p-0" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Pages
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="faq%27s.html">Faq's</a>
+                     <a class="dropdown-item" href="case-studies.html">Case Studies</a>
+                     <a class="dropdown-item" href="single-post.html">Single Post</a>
+                     <a class="dropdown-item" href="one-column.html">One Column</a>
+                     <a class="dropdown-item" href="two-column.html">Two Column</a>
+                     <a class="dropdown-item" href="three-colum-sidbar.html">Three Colum Sidbar</a>
+                     <a class="dropdown-item" href="four-column.html">Four Column</a>
+                     <a class="dropdown-item" href="six-colum-full-wide.html">Six Colum Full Wide</a>
+                   </div>
+                 </li>
+                 <li  class="nav-item">
+                   <a class="nav-link p-0" routerLink="/formation">Formation</a>
+                </li>
+             </ul>
+          
+             <div class="navbar-btn" *ngIf="isLogin">
+               
+               <a (click)="logout()">Logout</a>
+           </div>
+           
+           
+           
+          </div>
+       </nav>
+    </div>
+ </header>

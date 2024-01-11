@@ -1,0 +1,103 @@
+<div class="container card shadow mt-3">
+    <h2 align="center">My account</h2>
+
+    <div class="card">
+        <div class="card-title">
+            <i> My info
+            </i>
+        </div>
+         <table>
+
+            <tr> Client :{{user.name}} {{ user.prenom }}</tr>
+            <tr>Rib: {{bankAccount.rib}}</tr>
+
+
+            <tr *ngIf="bankAccount.balance<0" style="color:red;">Balance: {{bankAccount.balance}} you are in RED ZONE !!</tr>
+            <tr *ngIf="bankAccount.balance>=0">Balance: {{bankAccount.balance}}</tr>
+
+
+        </table> 
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-title">
+            <i> Cuurencey To convert
+            </i>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">From:</label>
+                <select name="from" [(ngModel)]="from" class="form-select" aria-label="Default select example">
+                  
+                    <option *ngFor="let i of countries" value="{{i.currencyCode}}">
+                        {{i.name}}
+                       
+                      </option>
+                        
+                  </select>
+                  
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">To:</label>
+            <select name="to" [(ngModel)]="to" class="form-select" aria-label="Default select example">
+              
+                <option *ngFor="let i of countries" value="{{i.currencyCode}}">
+                    {{i.name}}
+                  </option>
+                  
+                               
+              </select>
+        </div>
+        
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Amount:</label>
+            <input type="email" [(ngModel)]="amount" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" placeholder="Enter from">
+        </div>
+
+        <div class="form-group">
+           <h3>Result: {{result}}</h3>
+           
+        </div>
+        
+        <button class="btn btn-primary" (click)="convert()">Convert</button>
+    </div>
+
+
+    <div class="card mt-3">
+        <div class="card-title">
+            <i> Versement
+            </i>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Amount:</label>
+            <input type="email" [(ngModel)]="somme" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp" placeholder="Enter Amount">
+        </div>
+
+        <button class="btn btn-primary" (click)="AddAmount()">Add</button>
+    </div>
+
+    <div class="card mt-3">
+        <div class="card-title">
+            <i> Transaction
+            </i>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Amount:</label>
+                <input type="email" [(ngModel)]="TransSom" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Enter Amount">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Account:</label>
+                <select [(ngModel)]="To" class="form-select" aria-label="Default select example">
+                    <option selected disabled>Open this select menu</option>
+                    <option *ngFor="let i of dataAcc" value="{{i.idBankAccount}}">{{i.rib}}</option>
+
+                </select>
+
+                <button class="btn btn-warning" (click)="Transaction()">Transact</button>
+            </div>
+
+        </div>
+    </div>
+</div>

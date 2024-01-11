@@ -1,0 +1,20 @@
+<div class="container" style="padding: 10%;">
+    <div class="card text-center mx-auto" style="width: 300px;">
+      <div class="card-header h5 text-white bg-primary">Password Reset</div>
+      <div class="card-body px-5">
+        <p class="card-text py-2">
+          Enter and confirm  a new password 
+        </p>
+        <div class="form-outline row">
+          <input type="password" class="form-control my-3" name="password" [(ngModel)]="password" />
+          <label class="form-label">Password</label>
+          
+          <input type="password" class="form-control my-3" name="passwordconfirm" [(ngModel)]="passwordconfirm" />
+          <label class="form-label"> Confirm Password </label>
+        </div>
+        <button (click)="createNewPass()" class="btn btn-primary ">Reset password</button>
+      
+      </div>
+    </div>
+  </div>
+  

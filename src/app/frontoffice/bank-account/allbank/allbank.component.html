@@ -1,0 +1,26 @@
+<div class="container shadow card mt-3">
+    <h1 align="center">All Banks</h1>
+
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">User FirstName</th>
+            <th scope="col">RIB</th>
+            <th scope="col">BALANCE</th>
+            <th scope="col">Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of data">
+            <td>{{i.user.firstName}}</td>
+            <td>{{i.rib}}</td>
+            <td>{{i.balance}}</td>
+            <td>
+              <button (click)="deleteAc(i.idBankAccount)"  class="btn btn-danger">Delete</button>
+          </tr>
+         
+        </tbody>
+      </table>
+</div>
